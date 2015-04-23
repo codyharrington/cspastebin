@@ -18,9 +18,26 @@ namespace PasteBin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult PostInput(Paste p)
+        public ActionResult Index(Paste p)
         {
             return View("DisplayPage", p);
+        }
+
+        [HttpGet]
+        public ActionResult GetPaste(string id)
+        {
+            return View("DisplayPage");
+        }
+
+        [HttpGet]
+        public ActionResult GetRawPaste(string id)
+        {
+            return View("DisplayPage");
+        }
+
+        private static string PrettifyData(Paste p)
+        {
+            throw new NotImplementedException();
         }
     }
 }

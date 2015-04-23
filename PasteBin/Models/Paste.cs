@@ -1,4 +1,6 @@
-﻿namespace PasteBin.Models
+﻿using System.ComponentModel;
+
+namespace PasteBin.Models
 {
     public class Paste
     {
