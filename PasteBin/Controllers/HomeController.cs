@@ -18,9 +18,10 @@ namespace PasteBin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Index(Paste p)
+        public string Index(Paste p)
         {
-            return View("DisplayPage", p);
+            string pasteId = PasteManager.StorePaste(p);
+            return Request.Url.Scheme + "://" + Request.Url.Authority + "/" + pasteId;
         }
 
         [HttpGet]
