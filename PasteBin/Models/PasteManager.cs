@@ -15,16 +15,25 @@ namespace PasteBin.Models
     {
         public static string StorePaste(Paste p)
         {
+            if (string.IsNullOrEmpty(p.PasteData))
+            {
+                p.PasteData = "";
+            }
             var pasteId = HashPaste(p).Substring(0, 4);
             var directoryToWrite = GenerateDirectoryPathFromHash(pasteId);
             System.IO.File.WriteAllText(directoryToWrite + pasteId, p.PasteData);
             return pasteId;
         }
 
-        public static string GetPaste(string id)
+        public static Paste GetPaste(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                return new Paste {PasteData = ""};
+            }
             var directoryPath = GenerateDirectoryPathFromHash(id);
-            return File.ReadAllText(directoryPath + id);
+            string pasteString =  File.ReadAllText(directoryPath + id);
+            return new Paste {PasteData = pasteString};
         }
 
         private static string HashPaste(Paste p)

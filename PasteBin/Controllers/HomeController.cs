@@ -21,19 +21,20 @@ namespace PasteBin.Controllers
         public string Index(Paste p)
         {
             string pasteId = PasteManager.StorePaste(p);
-            return Request.Url.Scheme + "://" + Request.Url.Authority + "/" + pasteId;
+            return Request.Url.Scheme + "://" + Request.Url.Authority + "/Home/DisplayPaste/" + pasteId;
         }
 
         [HttpGet]
-        public ActionResult GetPaste(string id)
+        public ActionResult DisplayPaste(string id)
         {
-            return View("DisplayPage");
+            Paste p = PasteManager.GetPaste(id);
+            return View("DisplayPage", p);
         }
 
         [HttpGet]
-        public ActionResult GetRawPaste(string id)
+        public string GetRawPaste(string id)
         {
-            return View("DisplayPage");
+            return PasteManager.GetPaste(id).PasteData;
         }
 
         private static string PrettifyData(Paste p)

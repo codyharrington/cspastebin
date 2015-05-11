@@ -112,6 +112,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DisplayPasteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -123,24 +124,69 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\highlight\agate.css" />
+    <Content Include="Content\highlight\androidstudio.css" />
+    <Content Include="Content\highlight\arta.css" />
+    <Content Include="Content\highlight\ascetic.css" />
+    <Content Include="Content\highlight\atelier-dune.dark.css" />
+    <Content Include="Content\highlight\atelier-dune.light.css" />
+    <Content Include="Content\highlight\atelier-forest.dark.css" />
+    <Content Include="Content\highlight\atelier-forest.light.css" />
+    <Content Include="Content\highlight\atelier-heath.dark.css" />
+    <Content Include="Content\highlight\atelier-heath.light.css" />
+    <Content Include="Content\highlight\atelier-lakeside.dark.css" />
+    <Content Include="Content\highlight\atelier-lakeside.light.css" />
+    <Content Include="Content\highlight\atelier-seaside.dark.css" />
+    <Content Include="Content\highlight\atelier-seaside.light.css" />
+    <Content Include="Content\highlight\atelier-sulphurpool.dark.css" />
+    <Content Include="Content\highlight\atelier-sulphurpool.light.css" />
+    <Content Include="Content\highlight\brown_paper.css" />
+    <Content Include="Content\highlight\brown_papersq.png" />
+    <Content Include="Content\highlight\codepen-embed.css" />
+    <Content Include="Content\highlight\color-brewer.css" />
+    <Content Include="Content\highlight\dark.css" />
+    <Content Include="Content\highlight\darkula.css" />
+    <Content Include="Content\highlight\default.css" />
+    <Content Include="Content\highlight\docco.css" />
+    <Content Include="Content\highlight\far.css" />
+    <Content Include="Content\highlight\foundation.css" />
+    <Content Include="Content\highlight\github.css" />
+    <Content Include="Content\highlight\googlecode.css" />
+    <Content Include="Content\highlight\hybrid.css" />
+    <Content Include="Content\highlight\idea.css" />
+    <Content Include="Content\highlight\ir_black.css" />
+    <Content Include="Content\highlight\kimbie.dark.css" />
+    <Content Include="Content\highlight\kimbie.light.css" />
+    <Content Include="Content\highlight\magula.css" />
+    <Content Include="Content\highlight\mono-blue.css" />
+    <Content Include="Content\highlight\monokai.css" />
+    <Content Include="Content\highlight\monokai_sublime.css" />
+    <Content Include="Content\highlight\obsidian.css" />
+    <Content Include="Content\highlight\paraiso.dark.css" />
+    <Content Include="Content\highlight\paraiso.light.css" />
+    <Content Include="Content\highlight\pojoaque.css" />
+    <Content Include="Content\highlight\pojoaque.jpg" />
+    <Content Include="Content\highlight\railscasts.css" />
+    <Content Include="Content\highlight\rainbow.css" />
+    <Content Include="Content\highlight\school_book.css" />
+    <Content Include="Content\highlight\school_book.png" />
+    <Content Include="Content\highlight\solarized_dark.css" />
+    <Content Include="Content\highlight\solarized_light.css" />
+    <Content Include="Content\highlight\sunburst.css" />
+    <Content Include="Content\highlight\tomorrow-night-blue.css" />
+    <Content Include="Content\highlight\tomorrow-night-bright.css" />
+    <Content Include="Content\highlight\tomorrow-night-eighties.css" />
+    <Content Include="Content\highlight\tomorrow-night.css" />
+    <Content Include="Content\highlight\tomorrow.css" />
+    <Content Include="Content\highlight\vs.css" />
+    <Content Include="Content\highlight\xcode.css" />
+    <Content Include="Content\highlight\zenburn.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Content\Main.css" />
+    <Content Include="Scripts\highlight.pack.js" />
+    <Content Include="Scripts\Main.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -155,11 +201,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\DisplayPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DisplayPaste\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -182,7 +228,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64455</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
